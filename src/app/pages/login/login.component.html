@@ -13,24 +13,29 @@
       <div
         class="div vh-100 d-flex flex-column justify-content-center align-items-center"
       >
-        <div class="row">
+        <form [formGroup]="loginForm">
           <input
             class="form-control m-2"
             type="email"
             name="emailFormControl"
             placeholder="Email"
+            formControlName="email"
           />
-        </div>
-        <div class="row">
           <input
             class="form-control m-2"
             type="password"
-            name="emailFormControl"
+            name="passwordFormControl"
             placeholder="Password"
+            formControlName="password"
           />
-        </div>
 
-        <input class="btn btn-primary m-2" type="submit" />
+          <input
+            class="btn btn-primary m-2"
+            type="submit"
+            [disabled]="loginForm.invalid"
+            (click)="onLogin()"
+          />
+        </form>
       </div>
     </div>
   </div>
