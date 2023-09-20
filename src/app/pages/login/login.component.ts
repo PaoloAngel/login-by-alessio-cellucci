@@ -46,7 +46,7 @@ export class LoginComponent {
       })
       .pipe(take(1))
       .subscribe((loginResponse: ILoginResponse) => {
-        // if (loginResponse.jwt) localStorage.setItem('token', loginResponse.jwt);
+        if (loginResponse.jwt) localStorage.setItem('token', loginResponse.jwt);
         // this.router.navigate([AppRoutes.HOME]);
         this.router.navigate(['/home']);
       });
