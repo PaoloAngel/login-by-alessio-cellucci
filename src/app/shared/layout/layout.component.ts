@@ -12,4 +12,8 @@ export class LayoutComponent {
   public user$: Observable<IUser | null> = this.authService.user$;
 
   constructor(private authService: AuthService) {}
+
+  onLogout() {
+    this.authService.logout();
+  }
 }
